@@ -1,0 +1,28 @@
+<br>
+<form action="" class="form-inline">
+  <input class="form-control" name="searchInput" placeholder="Search" #searchInput="ngModel" [(ngModel)]="searchText" style="width:60%">
+  <button class="btn btn-outline-primary" (click)="searchText=''"> CLEAR </button> 
+</form>
+<br>
+<table class="table table-hover">
+    <thead>
+      <th>Violation </th>
+      <th>Fine </th>
+      <th>Vehile.N</th>
+      <th>License.N</th>
+      <th>Location</th>
+      <th>Details</th>
+    </thead>
+    <tbody>
+        
+        <tr *ngFor="let emp of list">
+      
+      <td (click)="onEdit(emp)" *ngIf="filterCondition(emp)">{{emp.violation}}</td>
+      <td (click)="onEdit(emp)" *ngIf="filterCondition(emp)">{{emp.fine}}</td>
+      <td (click)="onEdit(emp)" *ngIf="filterCondition(emp)">{{emp.vehilenum}}</td>
+      <td (click)="onEdit(emp)" *ngIf="filterCondition(emp)">{{emp.licensenum}}</td>
+        <td (click)="onEdit(emp)" *ngIf="filterCondition(emp)">{{emp.location}}</td>
+          <td (click)="onEdit(emp)" *ngIf="filterCondition(emp)">{{emp.details}}</td>
+    </tr>
+    </tbody>
+    </table>
